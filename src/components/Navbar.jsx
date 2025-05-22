@@ -38,11 +38,11 @@ export const Navbar = () => {
               Home
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#" className="text-lg font-medium">
-              About
+              Tools
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="#" className="text-lg font-medium">
               Articles
@@ -50,7 +50,7 @@ export const Navbar = () => {
           </li>
           <li>
             <a href="#" className="text-lg font-medium">
-              Contact
+              Experiences
             </a>
           </li>
         </ul>
