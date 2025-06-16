@@ -1,27 +1,20 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect } from "react";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
-        setActive(true);
-      } else {
-        setActive(false);
-      }
+      setActive(window.scrollY > 150);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="navbar  py-7">
-      <div className="flex item-center justify-between  md:border-b-2 md:border-gray-400">
+    <nav className="navbar py-7">
+      <div className="flex items-center justify-between md:border-b-2 md:border-gray-400">
         <div className="logo">
           <h1 className="text-3xl font-bold bg-gray-700 text-white p-2 md:bg-transparent md:text-black">
             nadliw
@@ -38,23 +31,18 @@ export const Navbar = () => {
               Home
             </a>
           </li>
-          {/* <li>
-            <a href="#" className="text-lg font-medium">
-              Tools
-            </a>
-          </li> */}
           <li>
-            <a href="#" className="text-lg font-medium">
+            <a href="#articles" className="text-lg font-medium">
               Articles
             </a>
           </li>
           <li>
-            <a href="#" className="text-lg font-medium">
+            <a href="#experiences" className="text-lg font-medium">
               Experiences
             </a>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
