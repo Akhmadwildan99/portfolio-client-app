@@ -1,6 +1,6 @@
 import { useState } from "react";
 import heroImage from "/assets/hero.jpg";
-import CV from "../../public/assets/CV_Akhmad_Wildan.pdf";
+import CV from "/assets/CV_Akhmad_Wildan.pdf";
 
 function Hero() {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -11,7 +11,7 @@ function Hero() {
     // Simulate download completion after 2 seconds
     setTimeout(() => {
       setIsDownloading(false);
-    }, 2000);
+    }, 500);
   };
 
   return (
