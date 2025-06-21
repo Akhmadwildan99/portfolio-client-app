@@ -24,7 +24,7 @@ function Experiences() {
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500">{experience.role}</dd>
               <dt className="sr-only">Date</dt>
-              <dd className="ml-auto text-xs text-zinc-400 dark:text-zinc-500" aria-label={`${experience.startDate} until ${experience.endDate}`}>
+              <dd className="ml-auto text-xs text-zinc-400" aria-label={`${experience.startDate} until ${experience.endDate}`}>
                 <time dateTime={experience.startDate}>{experience.startDate}</time>
                 <span aria-hidden="true">-</span>
                 <time dateTime={experience.endDate}>{experience.endDate}</time>

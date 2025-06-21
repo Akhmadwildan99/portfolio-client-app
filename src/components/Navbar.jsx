@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const [active, setActive] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +15,19 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (section) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        if (section) {
+          document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else if (section) {
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="navbar py-7">
@@ -27,20 +44,26 @@ export const Navbar = () => {
             }`}
         >
           <li>
-            <a href="#" className="text-lg font-medium">
+            <button onClick={() => handleNavClick()} className="text-lg font-medium cursor-pointer text-black">
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#articles" className="text-lg font-medium">
+            <button onClick={() => handleNavClick('articles')} className="text-lg font-medium cursor-pointer text-black">
               Articles
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#experiences" className="text-lg font-medium">
+            <button onClick={() => handleNavClick('experiences')} className="text-lg font-medium cursor-pointer text-black">
               Experiences
-            </a>
+            </button>
           </li>
+          <li>
+            <button onClick={() => handleNavClick('skills')} className="text-lg font-medium cursor-pointer text-black">
+              Skills
+            </button>
+          </li>
+
         </ul>
       </div>
     </nav>

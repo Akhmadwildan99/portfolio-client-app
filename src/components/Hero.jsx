@@ -18,7 +18,7 @@ function Hero() {
     <section id="hero" className="hero grid md:grid-cols-2 items-center pt-10 justify-between xl:gap-10 gap-6 grid-cols-1">
       <div>
         <h5 className="text-gray-400 text-3xl mb-6">A Software Engineer</h5>
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-black">
           Hi, I'm 
           <span className="px-4 text-black xl:text-white xl:bg-black">Akhmad Wildan</span>
         </h1>
