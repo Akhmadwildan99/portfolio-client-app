@@ -3,7 +3,7 @@ import skills from '../data-skills.js';
 function Skills() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-12 shadow-2xl">
-      <h2 className="flex text-2xl font-bold mb-6">
+      <h2 className="flex text-2xl font-bold mb-6 text-zinc-800">
         <i className="ri-tools-line ri-lg mt-1"></i>
         <span className="ml-3">Skills & Technologies</span>
       </h2>

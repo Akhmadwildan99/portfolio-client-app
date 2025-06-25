@@ -3,7 +3,7 @@ import articles from '../data-articles.js';
 function Articles() {
   return (
     <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-8 lg:max-w-none">
-      <h2 className="text-2xl font-bold mb-6">Articles</h2>
+      <h2 className="text-2xl font-bold mb-6 text-zinc-800">Articles</h2>
       {articles.map((article) => (
         <article key={article.id} className="group relative flex flex-col items-start">
           <h3 className="text-base font-semibold tracking-tight text-zinc-800">
